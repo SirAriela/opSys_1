@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "stdio.h"
 
 // 1.1
 //recursive function that exceeds from stack memory
@@ -26,5 +26,8 @@ int memmory() {
 int main() {
     int x = division(10, 0);
     printf("x = %d\n", x);
+    x = recusive_fun(-3);
+    x = memmory();
+    printf("%d\n", x);
     return 0;
 }
