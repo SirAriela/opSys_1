@@ -24,10 +24,15 @@ int memmory() {
 }
 
 int main() {
-    int x = division(10, 0);
-    printf("x = %d\n", x);
-    x = recusive_fun(-3);
-    x = memmory();
-    printf("%d\n", x);
+    //1.2
+    // int x = division(10, 0);
+    // printf("x = %d\n", x);
+
+    //1.1
+    int y = recusive_fun(-3);
+
+    // //1.3
+    // int z = memmory();
+    // printf("%d\n", z);
     return 0;
 }
