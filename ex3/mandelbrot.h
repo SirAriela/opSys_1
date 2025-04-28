@@ -5,6 +5,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool mandelbrot(double complex, int );
+bool is_in_mandelbrot(double complex, int );
 
 #endif

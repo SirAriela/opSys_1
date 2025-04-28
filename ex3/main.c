@@ -14,15 +14,17 @@ int main() {
 
     while (1) {
         printf("Enter real and imaginary parts (and optionally N), 0 0 to quit:\n");
+        // reads a line of input
         if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
             break; // end of input
         }
 
-        // מנסים לקרוא שלושה מספרים מהשורה
-        int input_count = sscanf(buffer, "%lf %lf %d", &real, &imag, &n);
+        //tries to read from buffer in the format of "real imag n"
+        int input_count = sscanf(buffer,"%lf %lf %d", &real, &imag, &n);
 
         if (input_count == 2) {
             n = DEFAULT_N;
+
         } else if (input_count != 3) {
             fprintf(stderr, "Invalid input!\n");
             break;
@@ -35,7 +37,7 @@ int main() {
 
         double complex c = real + imag * I;
 
-        if (mandelbrot(c, n)) {
+        if (is_in_mandelbrot(c, n)) {
             printf("%.3f + %.3fi is in the Mandelbrot set\n", real, imag);
         } else {
             printf("%.3f + %.3fi is NOT in the Mandelbrot set\n", real, imag);
