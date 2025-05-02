@@ -1,13 +1,21 @@
+# Makefile for signal communication programs
+
+# Compiler
 CC = gcc
-CFLAGS = -Wall -g
 
-all: signal_sender signal_receiver
+# Compiler flags
+CFLAGS = -Wall -Wextra -Wno-unused-parameter
 
-signal_sender: signal_sender.c
-	$(CC) $(CFLAGS) -o signal_sender signal_sender.c
+# Targets
+all: sender receiver
 
-signal_receiver: signal_receiver.c
-	$(CC) $(CFLAGS) -o signal_receiver signal_receiver.c
+sender: sender.c
+	$(CC) $(CFLAGS) -o sender sender.c
+
+receiver: receiver.c
+	$(CC) $(CFLAGS) -o receiver receiver.c
 
 clean:
-	rm -f signal_sender signal_receiver
+	rm -f sender receiver *.o
+
+.PHONY: all clean
