@@ -7,6 +7,10 @@ all: $(APPNAME)
 $(APPNAME): ex5.o algorithm.o
 	$(CXX) $(CXXFLAGS) -o $(APPNAME) ex5.o algorithm.o
 
+profile: 
+	gprof $(APPNAME) gmon.out > analysis.txt
+	@echo "Profiling data saved to analysis.txt"
+
 ex5.o: ex5.cpp algorithm.h
 	$(CXX) $(CXXFLAGS) -c ex5.cpp -o ex5.o
 
